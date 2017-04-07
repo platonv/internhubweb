@@ -1,6 +1,17 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+InternHub - ISS Project
+Team ...
+
+###Prerequisites ###
+Node.js >= 6.9.0
+NPM >= 3.0.0
+
+```npm install -g @angular/cli```
+
+For linux: try sudo npm...
+
+Go to project root folder(internHub) -> ng serve or npm start
 
 ### What is this repository for? ###
 

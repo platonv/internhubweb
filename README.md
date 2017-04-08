@@ -6,10 +6,13 @@ Team ...
 ###Prerequisites ###
 Node.js >= 6.9.0
 NPM >= 3.0.0
+```curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -```
+then
+```sudo apt-get install -y nodejs```
 
 ```npm install -g @angular/cli```
 
-For linux: try sudo npm...
+For linux DO: sudo npm...
 
 Go to project root folder(internHub) -> ng serve or npm start
 

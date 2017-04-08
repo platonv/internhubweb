@@ -16,8 +16,10 @@ then
 For linux DO: sudo npm...
 
 Go to project root folder(internHub):
-1) For initialization: npm install
-2) Run server with: ng serve
+
+1) For initialization: ```npm install```
+
+2) Run server with: ```ng serve```
 
 ### What is this repository for? ###
 

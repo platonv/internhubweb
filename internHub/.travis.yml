@@ -27,4 +27,4 @@ script:
   - yarn run build:ci
 
 notifications:
-  slack: akveo:q559HckfZMSyZRb803aiLcjH
+  slack: InternHub:q559HckfZMSyZRb803aiLcjH

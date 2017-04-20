@@ -1,9 +1,9 @@
 {
-  "baseUrl": "/ng2-admin/",
+  "baseUrl": "/InternHub/",
   "locals": {
     "url": "http://localhost:8080",
-    "name": "ng2-admin blog",
-    "owner": "Akveo",
+    "name": "InternHub blog",
+    "owner": "InternHub",
     "description": ""
   },
   "plugins": [

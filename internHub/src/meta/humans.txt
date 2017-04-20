@@ -3,12 +3,12 @@
 
 # TEAM
 
-  akveo.com
+  InternHub.com
 
 # THANKS
 
   <name>
-  Akveo Team
+  InternHub Team
 
 # TECHNOLOGY COLOPHON
 

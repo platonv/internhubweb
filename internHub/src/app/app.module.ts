@@ -14,11 +14,14 @@ import { ENV_PROVIDERS } from './environment';
 import { routing } from './app.routing';
 
 // App is our top level component
-import { App } from './app.component';
+import { InternHubApp } from './app.component';
 import { AppState, InternalStateType } from './app.service';
 import { GlobalState } from './global.state';
 import { NgaModule } from './theme/nga.module';
 import { PagesModule } from './pages/pages.module';
+
+//Token Service
+import { Angular2TokenService } from './services/token-service/auth-token.service';
 
 
 // Application wide providers
@@ -37,9 +40,9 @@ export type StoreType = {
  * `AppModule` is the main entry point into Angular2's bootstraping process
  */
 @NgModule({
-  bootstrap: [App],
+  bootstrap: [InternHubApp],
   declarations: [
-    App
+    InternHubApp
   ],
   imports: [ // import Angular's modules
     BrowserModule,
@@ -54,7 +57,8 @@ export type StoreType = {
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
-    APP_PROVIDERS
+    APP_PROVIDERS,
+    Angular2TokenService
   ]
 })
 

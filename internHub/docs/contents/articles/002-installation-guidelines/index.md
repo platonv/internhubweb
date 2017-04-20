@@ -8,7 +8,7 @@ template: article.jade
 
 ## Prerequisites
 
-Although ng2-admin can be run without any development experience, it would be much easier if you already have some. 
+Although InternHub can be run without any development experience, it would be much easier if you already have some. 
 The following instructions allow you to run a local copy on your machine.
 
 ## Install tools
@@ -20,18 +20,18 @@ If you don't have any of these tools installed already, you will need to:
 **Note**: Make sure you have Node version >= 4.0 and NPM >= 3
 ## Clone repository and install dependencies
 
-You will need to clone the source code of ng2-admin GitHub repository:
+You will need to clone the source code of InternHub GitHub repository:
 
 ```bash
-git clone https://github.com/akveo/ng2-admin.git
+git clone https://github.com/InternHub/InternHub.git
 ```
 After the repository is cloned, go inside of the repository directory and install dependencies:
 
 ```bash
-cd ng2-admin
+cd InternHub
 npm install
 ```
-This will setup a working copy of ng2-admin on your local machine.
+This will setup a working copy of InternHub on your local machine.
 
 ## Running local copy
 

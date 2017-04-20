@@ -1,6 +1,7 @@
 import { Routes, RouterModule }  from '@angular/router';
 import { Pages } from './pages.component';
 import { ModuleWithProviders } from '@angular/core';
+import { Angular2TokenService } from '../services/token-service/auth-token.service';
 // noinspection TypeScriptValidateTypes
 
 // export function loadChildren(path) { return System.import(path); };
@@ -18,8 +19,8 @@ export const routes: Routes = [
     path: '',
     component: Pages,
     children: [
-      { path: '', redirectTo: 'jobs', pathMatch: 'full' },
-      { path: 'jobs', loadChildren: 'app/pages/jobs/jobs.module#JobsModule' }
+      { path: '', redirectTo: '/jobs', pathMatch: 'full' },
+      { path: 'jobs', loadChildren: 'app/pages/jobs/jobs.module#JobsModule', canActivate: [Angular2TokenService] }
     ]
   }
 ];

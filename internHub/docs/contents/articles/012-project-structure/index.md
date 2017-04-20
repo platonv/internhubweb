@@ -11,7 +11,7 @@ The project structure is originally based on [Angular2 Webpack Starter](https://
 The directory structure of this template is as follows:
 
 ```
-ng2-admin/
+InternHub/
    ├──config/                    * webpack build configuration
    │   ├──head-config.common.js  * configuration for head elements in index.html
    │   │

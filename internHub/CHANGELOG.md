@@ -96,7 +96,7 @@ Tree package does not support RC6 currently so it was hidden from the menu.
 # 0.5.0 (2016-08-30)
 
 ### Note
-Not all packages used in ng2-admin support RC5 at the moment, so we suggest waiting until ng2-admin@0.5.1 version for a complete support of RC5.
+Not all packages used in InternHub support RC5 at the moment, so we suggest waiting until InternHub@0.5.1 version for a complete support of RC5.
 
 ### Features
 
@@ -110,10 +110,10 @@ Not all packages used in ng2-admin support RC5 at the moment, so we suggest wait
 
 Things to consider:
 
-* We introduced NgaModule - wrapper for all ng2-admin features. At the moment it includes everything (directives, services, configs, etc). But, the important thing is that we are planning to refactor it and divide into smaller modules, so that if you don't need a whole list of features somewhere in your code - you can simply import a smaller part. [Here are some more details](https://github.com/akveo/ng2-admin/issues/179).
+* We introduced NgaModule - wrapper for all InternHub features. At the moment it includes everything (directives, services, configs, etc). But, the important thing is that we are planning to refactor it and divide into smaller modules, so that if you don't need a whole list of features somewhere in your code - you can simply import a smaller part. [Here are some more details](https://github.com/InternHub/InternHub/issues/179).
 * Each page section now is a module (Feature Module as per angular documents) wrapped in pages.module.
 * Routes configuration (again :( ) moved from one complete file to modules (page sections) configurations. Thus we just left menu configuration as it was before (in one file), just renamed it into app.menu.ts.
-* We are planning to continue code refactoring and planning to change component names to follow angular recommendations. Thus we strongly recommend to not import Ba* directives directly and use NgaModule which will encapsulate the changes we are going to make. [Here are some more details](https://github.com/akveo/ng2-admin/issues/179).
+* We are planning to continue code refactoring and planning to change component names to follow angular recommendations. Thus we strongly recommend to not import Ba* directives directly and use NgaModule which will encapsulate the changes we are going to make. [Here are some more details](https://github.com/InternHub/InternHub/issues/179).
 
 
 ### How to update
@@ -132,7 +132,7 @@ Things to consider:
 
 ### Features
 
-* Missed new component [ng2-smart-table](https://akveo.github.io/ng2-smart-table/) - [demo](http://akveo.com/ng2-admin/#/pages/tables/smarttables)
+* Missed new component [ng2-smart-table](https://InternHub.github.io/ng2-smart-table/) - [demo](http://InternHub.com/InternHub/#/pages/tables/smarttables)
 
 ### How to update
 
@@ -153,7 +153,7 @@ Things to consider:
 ### Features
 
 * Finally get rid of bower (thanks to @GRoguelon)
-* New component [ng2-smart-table](https://akveo.github.io/ng2-smart-table/) - [demo](http://akveo.com/ng2-admin/#/pages/tables/smarttables)
+* New component [ng2-smart-table](https://InternHub.github.io/ng2-smart-table/) - [demo](http://InternHub.com/InternHub/#/pages/tables/smarttables)
 
 
 ### How to update
@@ -210,7 +210,7 @@ Things to consider:
 
 * Router is updated to Angular Router Component. Old beta router is removed.
 That means that all the routes are moved to the `src/app/app.routes.ts` file. `src/app/app.menu.ts` is also merged into the routes configuration.
-More details on how to configure a new route you can find [here](https://akveo.github.io/ng2-admin/articles/015-sidebar/).
+More details on how to configure a new route you can find [here](https://InternHub.github.io/InternHub/articles/015-sidebar/).
 
 * Forms are updated as well. Thus you need to reconfigure all your forms to use new Angular Forms. Checkout the `src/app/pages/login/login.component.ts`component for more details and example.
 
@@ -249,8 +249,8 @@ More details on how to configure a new route you can find [here](https://akveo.g
 
 * Angular updated to rc.2
 * Dependencies updated accordingly
-* Login page component [Demo](http://akveo.com/ng2-admin/#/login)
-* Sign up page component [Demo](http://akveo.com/ng2-admin/#/register)
+* Login page component [Demo](http://InternHub.com/InternHub/#/login)
+* Sign up page component [Demo](http://InternHub.com/InternHub/#/register)
 
 ### BREAKING CHANGES
 * `$` renamed to `jQuery` because of name resolution conflicts

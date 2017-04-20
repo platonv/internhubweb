@@ -7,20 +7,20 @@ import {
 } from '@angular/core/testing';
 
 // Load the implementations that should be tested
-import { App } from './app.component';
+import { InternHubApp } from './app.component';
 import { GlobalState } from './global.state';
 import { BaImageLoaderService, BaThemeSpinner } from './theme/services';
 import { BaThemeConfigProvider } from './theme/theme.configProvider';
 import { BaThemeConfig } from './theme/theme.config';
 
 describe(`App`, () => {
-  let comp: App;
-  let fixture: ComponentFixture<App>;
+  let comp: InternHubApp;
+  let fixture: ComponentFixture<InternHubApp>;
 
   // async beforeEach
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ App ],
+      declarations: [ InternHubApp ],
       schemas: [NO_ERRORS_SCHEMA],
       providers: [GlobalState, BaImageLoaderService, BaThemeSpinner, BaThemeConfigProvider, BaThemeConfig]
     })
@@ -29,7 +29,7 @@ describe(`App`, () => {
 
   // synchronous beforeEach
   beforeEach(() => {
-    fixture = TestBed.createComponent(App);
+    fixture = TestBed.createComponent(InternHubApp);
     comp    = fixture.componentInstance;
 
     fixture.detectChanges(); // trigger initial data binding

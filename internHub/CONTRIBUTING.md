@@ -1,6 +1,6 @@
-# Contributing to ng2-admin
+# Contributing to InternHub
 
-We would love for you to contribute to ng2-admin and help make it even better than it is
+We would love for you to contribute to InternHub and help make it even better than it is
 today! As a contributor, here are the guidelines we would like you to follow:
 
  - [Question or Problem?](#question)
@@ -47,7 +47,7 @@ Before you submit an issue, please search the issue tracker, maybe an issue for 
 
 We want to fix all the issues as soon as possible, but before fixing a bug we need to reproduce and confirm it. In order to reproduce bugs we will systematically ask you to provide a minimal reproduction scenario using http://plnkr.co. Having a live, reproducible scenario gives us wealth of important information without going back & forth to you with additional questions like:
 
-- version of ng2-admin used
+- version of InternHub used
 - 3rd-party libraries and their versions
 - and most importantly - a use-case that fails
 
@@ -57,13 +57,13 @@ We will be insisting on a minimal reproduce scenario in order to save maintainer
 
 Unfortunately we are not able to investigate / fix bugs without a minimal reproduction, so if we don't hear back from you we are going to close an issue that don't have enough info to be reproduced.
 
-You can file new issues by filling out our [new issue form](https://github.com/akveo/ng2-admin/issues/new).
+You can file new issues by filling out our [new issue form](https://github.com/InternHub/InternHub/issues/new).
 
 
 ### <a name="submit-pr"></a> Submitting a Pull Request (PR)
 Before you submit your Pull Request (PR) consider the following guidelines:
 
-* Search [GitHub](https://github.com/akveo/ng2-admin/pulls) for an open or closed PR
+* Search [GitHub](https://github.com/InternHub/InternHub/pulls) for an open or closed PR
   that relates to your submission. You don't want to duplicate effort.
 * Make your changes in a new git branch:
 
@@ -86,7 +86,7 @@ Before you submit your Pull Request (PR) consider the following guidelines:
     git push origin my-fix-branch
     ```
 
-* In GitHub, send a pull request to `ng2-admin:master`.
+* In GitHub, send a pull request to `InternHub:master`.
 * If we suggest changes then:
   * Make the required updates.
   * Rebase your branch and force push to your GitHub repository (this will update your Pull Request):
@@ -131,7 +131,7 @@ from the main (upstream) repository:
 
 We have very precise rules over how our git commit messages can be formatted.  This leads to **more
 readable messages** that are easy to follow when looking through the **project history**.  But also,
-we use the git commit messages to **generate the ng2-admin change log**.
+we use the git commit messages to **generate the InternHub change log**.
 
 ### Commit Message Format
 Each commit message consists of a **header**, a **body** and a **footer**.  The header has a special
@@ -152,7 +152,7 @@ to read on GitHub as well as in various git tools.
 
 Footer should contain a [closing reference to an issue](https://help.github.com/articles/closing-issues-via-commit-messages/) if any.
 
-Samples: (even more [samples](https://github.com/akveo/ng2-admin/commits/master))
+Samples: (even more [samples](https://github.com/InternHub/InternHub/commits/master))
 
 ```
 docs(changelog): update change log to beta.5
@@ -222,7 +222,7 @@ A detailed explanation can be found in this [document][commit-message-format].
 
 
 [commit-message-format]: https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#
-[github]: https://github.com/akveo/ng2-admin
-[gitter]: https://gitter.im/ng2-admin
+[github]: https://github.com/InternHub/InternHub
+[gitter]: https://gitter.im/InternHub
 [jsfiddle]: http://jsfiddle.net
 [plunker]: http://plnkr.co/edit

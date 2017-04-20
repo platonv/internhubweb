@@ -8,9 +8,9 @@ template: article.jade
 
 We tried to make the process of color scheme customization as easy as possible. 
 
-By default ng2-admin has three built-in color profiles: ng2 (default blue sheme), mint and blur.
+By default InternHub has three built-in color profiles: ng2 (default blue sheme), mint and blur.
 This article will help you to create your own color profile.
-Let's say you want to make ng2-admin dark theme.
+Let's say you want to make InternHub dark theme.
 
 First we advise you to take some existing colorscheme file as a starting point. 
 For light themes we suggest taking `src/app/theme/sass/conf/colorScheme/_mint.scss` and for 
@@ -125,4 +125,4 @@ That's basically it! Right now your admin application should look like this:
 For further reference, please look in
 - Colorscheme scss file (`src/app/theme/sass/conf/colorScheme/_ng2.scss`, `src/app/theme/sass/conf/colorScheme/_mint.scss` and `src/app/theme/sass/conf/colorScheme/_blur.scss`)
 - `src/app/theme/theme.configProvider.js` to understand which javascript colors can be changed
-- If you want to know how to change the theme to blur, read the [following article](/ng2-admin/articles/014-switch-to-blur-theme/)
+- If you want to know how to change the theme to blur, read the [following article](/InternHub/articles/014-switch-to-blur-theme/)

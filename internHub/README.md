@@ -1,22 +1,22 @@
-[![Build Status](https://travis-ci.org/akveo/ng2-admin.svg?branch=master)](https://travis-ci.org/akveo/ng2-admin)
-[![Join the chat at https://gitter.im/ng2-admin/Lobby](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ng2-admin/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Dependency Status](https://david-dm.org/akveo/ng2-admin/status.svg)](https://david-dm.org/akveo/ng2-admin)
+[![Build Status](https://travis-ci.org/InternHub/InternHub.svg?branch=master)](https://travis-ci.org/InternHub/InternHub)
+[![Join the chat at https://gitter.im/InternHub/Lobby](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/InternHub/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Dependency Status](https://david-dm.org/InternHub/InternHub/status.svg)](https://david-dm.org/InternHub/InternHub)
 
 # Admin panel framework based on Angular 2, Bootstrap 4 and Webpack
 
-Admin template made with :heart:  by [Akveo team](http://akveo.com/). Follow us on [Twitter](https://twitter.com/akveo_inc) to get the latest news about this template first!
+Admin template made with :heart:  by [InternHub team](http://InternHub.com/). Follow us on [Twitter](https://twitter.com/InternHub_inc) to get the latest news about this template first!
 
 ### Demo
 
-<a target="_blank" href="http://akveo.com/ng2-admin/"><img src="http://i.imgur.com/QK9AzHj.jpg" width="600" alt="Sky Blue"/></a>
+<a target="_blank" href="http://InternHub.com/InternHub/"><img src="http://i.imgur.com/QK9AzHj.jpg" width="600" alt="Sky Blue"/></a>
 
-<a target="_blank" href="http://akveo.com/ng2-admin/">Live Demo</a>
+<a target="_blank" href="http://InternHub.com/InternHub/">Live Demo</a>
 
 ## Angular 1.x version
-Here you can find Angular 1.x based version: [Blur Admin](http://akveo.github.io/blur-admin/)
+Here you can find Angular 1.x based version: [Blur Admin](http://InternHub.github.io/blur-admin/)
  
 ## Documentation
-Installation, customization and other useful articles: https://akveo.github.io/ng2-admin/
+Installation, customization and other useful articles: https://InternHub.github.io/InternHub/
 
 ## Based on
 Angular 2, Bootstrap 4, Webpack and lots of awesome modules and plugins
@@ -29,11 +29,11 @@ This project runs its tests on multiple desktop and mobile browsers using [Brows
 ## How can I support developers?
 - Star our GitHub repo :star:
 - Create pull requests, submit bugs, suggest new features or documentation updates :wrench:
-- Follow us on [Twitter](https://twitter.com/akveo_inc) :feet:
-- Like our page on [Facebook](https://www.facebook.com/akveo/) :thumbsup:
+- Follow us on [Twitter](https://twitter.com/InternHub_inc) :feet:
+- Like our page on [Facebook](https://www.facebook.com/InternHub/) :thumbsup:
 
 ## Can I hire you guys?
-Yes!  Visit [our homepage](http://akveo.com/) or simply leave us a message to [contact@akveo.com](mailto:contact@akveo.com). We will be happy to work with you!
+Yes!  Visit [our homepage](http://InternHub.com/) or simply leave us a message to [contact@InternHub.com](mailto:contact@InternHub.com). We will be happy to work with you!
 
 ## Features
 * TypeScript
@@ -51,7 +51,7 @@ Yes!  Visit [our homepage](http://akveo.com/) or simply leave us a message to [c
 ## License
 [MIT](LICENSE.txt) license.
 
-### From akveo
+### From InternHub
 
 Enjoy :metal:
 We're always happy to receive your feedback!

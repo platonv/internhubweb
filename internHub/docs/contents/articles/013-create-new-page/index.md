@@ -6,7 +6,7 @@ group: Customization
 template: article.jade
 ---
 
-ng2-admin uses [Angular 2 Component Router](https://angular.io/docs/ts/latest/guide/router.html) for navigation.
+InternHub uses [Angular 2 Component Router](https://angular.io/docs/ts/latest/guide/router.html) for navigation.
 
 We strongly recommend to follow this page structure in your application.
 If it does not fit your needs please create a GitHub issue and tell us why. We would be glad to discuss. 

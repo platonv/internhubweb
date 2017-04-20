@@ -1,5 +1,8 @@
 import {Component} from '@angular/core';
 import {FormGroup, AbstractControl, FormBuilder, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
+
+import { LoginService, User } from './login.service';
 
 import 'style-loader!./login.scss';
 
@@ -14,7 +17,7 @@ export class Login {
   public password:AbstractControl;
   public submitted:boolean = false;
 
-  constructor(fb:FormBuilder) {
+  constructor(fb:FormBuilder, private _loginService: LoginService, private _router: Router) {
     this.form = fb.group({
       'email': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
       'password': ['', Validators.compose([Validators.required, Validators.minLength(4)])]
@@ -24,11 +27,19 @@ export class Login {
     this.password = this.form.controls['password'];
   }
 
-  public onSubmit(values:Object):void {
+  
+  onLoginSuccess(data){
+    console.log("Logged in success", data);
+    this._router.navigate(['/jobs']);
+  }
+
+  public onSubmit(user:User):void {
     this.submitted = true;
     if (this.form.valid) {
-      // your code goes here
-      // console.log(values);
+      console.log(user);
+      this._loginService.authenticateUser(user).subscribe( 
+        data => this.onLoginSuccess(data),
+        err => console.log(err));
     }
   }
 }

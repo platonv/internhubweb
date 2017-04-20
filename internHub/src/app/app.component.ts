@@ -1,22 +1,55 @@
-import { Component } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Component, ViewContainerRef } from '@angular/core';
 
-import { AppService } from './app.service';
-import { Element } from './element';
+import { GlobalState } from './global.state';
+import { BaImageLoaderService, BaThemePreloader, BaThemeSpinner } from './theme/services';
+import { BaThemeConfig } from './theme/theme.config';
+import { layoutPaths } from './theme/theme.constants';
+
+import 'style-loader!./app.scss';
+import 'style-loader!./theme/initial.scss';
+
+/*
+ * App Component
+ * Top Level Component
+ */
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app',
+  template: `
+    <main [ngClass]="{'menu-collapsed': isMenuCollapsed}" baThemeRun>
+      <div class="additional-bg"></div>
+      <router-outlet></router-outlet>
+    </main>
+  `
 })
-export class AppComponent {
-  elements: Element[];
-  errorMessage: string;
+export class App {
 
-  constructor (private http: Http) {
-    this.getElements();
+  isMenuCollapsed: boolean = false;
+
+  constructor(private _state: GlobalState,
+              private _imageLoader: BaImageLoaderService,
+              private _spinner: BaThemeSpinner,
+              private viewContainerRef: ViewContainerRef,
+              private themeConfig: BaThemeConfig) {
+
+    themeConfig.config();
+
+    this._loadImages();
+
+    this._state.subscribe('menu.isCollapsed', (isCollapsed) => {
+      this.isMenuCollapsed = isCollapsed;
+    });
   }
-  getElements() {
-    this.http.get("http://192.168.0.25:3000/users")
-                     .subscribe(res => this.elements = res.json());
+
+  public ngAfterViewInit(): void {
+    // hide spinner once all loaders are completed
+    BaThemePreloader.load().then((values) => {
+      this._spinner.hide();
+    });
   }
+
+  private _loadImages(): void {
+    // register some loaders
+    BaThemePreloader.registerLoader(this._imageLoader.load(layoutPaths.images.root + 'sky-bg.jpg'));
+  }
+
 }

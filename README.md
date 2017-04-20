@@ -3,9 +3,9 @@
 InternHub - ISS Project
 Team ...
 
-###Prerequisites ###
-Node.js >= 6.9.0
-NPM >= 3.0.0
+### Prerequisites ###
+```Node.js >= 6.9.0```
+```NPM >= 3.0.0```
 
 ```curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -```
 then

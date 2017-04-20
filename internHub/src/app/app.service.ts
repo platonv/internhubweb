@@ -1,17 +1,41 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
 
-import { Element } from './element';
+export type InternalStateType = {
+  [key: string]: any
+};
 
 @Injectable()
-export class AppService {
-  elements:Element[];
-  errorMessage: any;
+export class AppState {
+  _state: InternalStateType = {};
 
-  constructor(private http: Http) { }
+  constructor() {
+  }
 
-  getElements() {
-    return this.http.get("http://192.168.0.25:3000/users")
-                     .subscribe(res => this.elements = res.json());
+  // already return a clone of the current state
+  get state() {
+    return this._state = this._clone(this._state);
+  }
+
+  // never allow mutation
+  set state(value) {
+    throw new Error('do not mutate the `.state` directly');
+  }
+
+
+  get(prop?: any) {
+    // use our state getter for the clone
+    const state = this.state;
+    return state.hasOwnProperty(prop) ? state[prop] : state;
+  }
+
+  set(prop: string, value: any) {
+    // internally mutate our state
+    return this._state[prop] = value;
+  }
+
+
+  private _clone(object: InternalStateType) {
+    // simple object clone
+    return JSON.parse(JSON.stringify(object));
   }
 }

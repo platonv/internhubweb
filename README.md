@@ -19,7 +19,7 @@ Go to project root folder(internHub):
 
 1) For initialization: ```npm install```
 
-2) Run server with: ```ng serve```
+2) Run server with: ```ng serve``` <-- piece of shit better use ```npm start```
 
 ### What is this repository for? ###
 

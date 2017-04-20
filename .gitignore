@@ -1,28 +1,28 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
-/dist
-/tmp
+internHub/dist
+internHub/tmp
 
 # dependencies
-/node_modules
-/bower_components
+internHub/node_modules
+internHub/bower_components
 
 # IDEs and editors
-/.idea
+internHub/.idea
 
 # misc
-/.sass-cache
-/connect.lock
-/coverage/*
-/libpeerconnection.log
-npm-debug.log
-testem.log
-/typings
+internHub/.sass-cache
+internHub/connect.lock
+internHub/coverage/*
+internHub/libpeerconnection.log
+internHub/npm-debug.log
+internHub/testem.log
+internHub/typings
 
 # e2e
-/e2e/*.js
-/e2e/*.map
+internHub/e2e/*.js
+internHub/e2e/*.map
 
 #System Files
-.DS_Store
+internHub/.DS_Store

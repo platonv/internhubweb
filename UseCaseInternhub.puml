@@ -1,0 +1,25 @@
+@startuml
+:Main Admin: as Admin
+:Student:
+:University:
+:Company:
+
+left to right direction
+Admin -up->(Login)
+Admin -->(Manage jobs)
+Admin -->(Confirm new accounts)
+Admin -->(Manage account)
+University -up->(Login)
+University -->(Create account)
+University --> (Creates accounts for students)
+University --> (Manage account)
+Company -up-> (Login)
+Company -up->(Manage jobs)
+Company -up->(Create account)
+Company -up->(Manage account)
+Student -up-> (Login)
+Student -up->(Search for jobs)
+Student -up->(Apply for job)
+Student -up->(Manage account)
+
+@enduml

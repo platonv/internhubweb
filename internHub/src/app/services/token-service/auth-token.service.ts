@@ -107,7 +107,7 @@ export class Angular2TokenService implements CanActivate {
             apiBase:                    "http://192.168.0.25:3000",
 
             signInPath:                 'auth/sign_in',
-            signInRedirect:             '/login',
+            signInRedirect:             '/jobs',
             signInStoredUrlStorageKey:  null,
 
             signOutPath:                'auth/sign_out',
@@ -206,6 +206,7 @@ export class Angular2TokenService implements CanActivate {
     signOut(): Observable<Response> {
         let observ = this.delete(this.getUserPath() + this.atOptions.signOutPath);
 
+        console.log("SIGNOUT");
         localStorage.removeItem('accessToken');
         localStorage.removeItem('client');
         localStorage.removeItem('expiry');

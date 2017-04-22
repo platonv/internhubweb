@@ -1,6 +1,9 @@
 import {Component} from '@angular/core';
 import {FormGroup, AbstractControl, FormBuilder, Validators} from '@angular/forms';
 import {EmailValidator, EqualPasswordsValidator} from '../../theme/validators';
+import { Router } from '@angular/router';
+
+import {RegisterService, User} from './register.service'
 
 import 'style-loader!./register.scss';
 
@@ -19,7 +22,7 @@ export class Register {
 
   public submitted:boolean = false;
 
-  constructor(fb:FormBuilder) {
+  constructor(fb:FormBuilder, private _registerService: RegisterService, private _router: Router) {
 
     this.form = fb.group({
       'name': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
@@ -37,11 +40,20 @@ export class Register {
     this.repeatPassword = this.passwords.controls['repeatPassword'];
   }
 
-  public onSubmit(values:Object):void {
+  onRegisterSuccess(data){
+    console.log("Register success", data);
+    this._router.navigate(['/jobs']);
+  }
+
+  public onSubmit(user:User):void {
     this.submitted = true;
+    console.log(user)
+    user.password = user.passwords.password;
     if (this.form.valid) {
-      // your code goes here
-      // console.log(values);
+      this._registerService.registerCompany(user).subscribe(
+        data=>this.onRegisterSuccess(data),
+        err=>console.log(err)
+        );
     }
   }
 }

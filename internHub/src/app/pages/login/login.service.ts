@@ -13,7 +13,7 @@ export class LoginService {
    }
 
   authenticateUser(user: User) {
-    user.userType = "admin";
+    user.userType = "company";
     console.log(user);
     return this._tokenService.signIn(user);
   }

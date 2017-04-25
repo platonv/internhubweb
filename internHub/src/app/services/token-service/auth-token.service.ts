@@ -104,7 +104,7 @@ export class Angular2TokenService implements CanActivate {
 
         let defaultOptions: Angular2TokenOptions = {
             apiPath:                    null,
-            apiBase:                    "http://192.168.0.25:3000",
+            apiBase:                    "http://internhubapi.herokuapp.com",
 
             signInPath:                 'auth/sign_in',
             signInRedirect:             '/login',

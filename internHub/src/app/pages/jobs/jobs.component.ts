@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Angular2TokenService } from '../../services/token-service/auth-token.service';
 import { JobsService, Job} from './jobs.service';
+import'jquery';
 
 @Component({
   providers:[JobsService],

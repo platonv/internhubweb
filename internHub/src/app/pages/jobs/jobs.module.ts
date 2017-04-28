@@ -8,6 +8,7 @@ import { routing } from './jobs.routing';
 import { JobsComponent } from './jobs.component';
 import { Angular2TokenService } from '../../services/token-service/auth-token.service';
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -20,6 +21,6 @@ import { Angular2TokenService } from '../../services/token-service/auth-token.se
   ],
   providers: [
     Angular2TokenService
-  ]
+  ],
 })
 export class JobsModule { }

@@ -1,0 +1,9 @@
+@startuml
+University-->(Create account)
+Company -->(Create account)
+MainAdmin-->(Login)
+(Login) --> (Confirm new accounts)
+(Confirm new accounts)..>(Send confirmation email):<<extends>>
+(Confirm new accounts)--(Create account)
+(Create account) ..>(Send request email):<<extends>>
+@enduml

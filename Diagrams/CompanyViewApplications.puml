@@ -1,0 +1,9 @@
+@startuml
+Student-->(Login)
+(Login)-->(Search for jobs):Student
+(Search for jobs)-->(Apply for job)
+(Apply for job)..>(Send message):<<extends>>
+Company -->(Login)
+(Login) --> (View Applications):Company
+(View Applications)--(Apply for job)
+@enduml

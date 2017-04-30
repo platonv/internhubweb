@@ -1,0 +1,12 @@
+@startuml
+Company -->(Login)
+(Login) -->(Create Jobs):Company
+Student -->(Login)
+(Login) -->(Search Jobs):Student
+(Create Jobs)--(Search Jobs)
+(Create Jobs)-->(Set field):<<include>>
+(Search Jobs)..>(Apply for a job):<<extends>>
+(Search Jobs)..>(Search by company name):<<include>>
+(Search Jobs)..>(Search by field):<<include>>
+(Search by field)--(Set field)
+@enduml

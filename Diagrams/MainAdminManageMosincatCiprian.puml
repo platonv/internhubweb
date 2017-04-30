@@ -1,0 +1,14 @@
+@startuml
+MainAdmin -right->(Login)
+Company --> (Login)
+(Login) -->(Manage account):Company
+(Manage account) ..> (Manage Jobs):<<include>>
+(Manage Jobs) ..> (Create Job):<<include>>
+(Manage Jobs) ..> (Remove Job):<<include>>
+(Manage Jobs) ..> (Update Job):<<include>>
+MainAdmin -->(Verify Jobs)
+(Verify Jobs)..>(See Jobs):<<include>>
+(Verify Jobs)..>(Remove Jobs):<<include>>
+(Verify Jobs)--(Create Job)
+
+@enduml

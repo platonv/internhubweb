@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 
 <div class="container">
-  <div class="col-md-6" *ngFor="let job of jobs">
+  <div class="col-md-4" *ngFor="let job of jobs">
     <div class="box box-default collapsed-box">
       <div class="box-header with-border">
         <h3 class="box-title">{{job.name}}</h3>
@@ -17,8 +17,11 @@
       </div>
       <!-- /.box-header -->
       <div class="box-body">
-        <h3>Job description:</h3>
-        {{job.description}}
+        <h4>Job description</h4>
+        <div class="box-body-content">
+          {{job.description}}
+        </div>
+        <button class="btn btn-block btn-success">Apply!</button>
       </div>
       <!-- /.box-body -->
     </div>

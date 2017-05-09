@@ -4,6 +4,15 @@
 }
 
 .box-body{
-    padding: 10px;
     background-color: #1b2c50;
+}
+
+.box-body-content{
+    padding: 20px;
+}
+
+button.btn.btn-success:hover{
+    transform: scale(1) !important;
+    background: rgb(116, 189, 21);
+    border-color: rgba(27, 27, 27, 0.56);
 }

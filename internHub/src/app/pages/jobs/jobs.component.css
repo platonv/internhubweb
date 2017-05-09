@@ -2,3 +2,8 @@
     width:50%;
     display:inline-block;
 }
+
+.box-body{
+    padding: 10px;
+    background-color: #1b2c50;
+}

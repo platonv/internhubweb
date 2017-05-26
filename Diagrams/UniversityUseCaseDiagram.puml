@@ -1,0 +1,7 @@
+@startuml
+left to right direction
+University -->(Create account)
+University -->(Login)
+University --> (Manage account)
+University --> (Creates accounts for students)
+@enduml

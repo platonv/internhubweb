@@ -1,0 +1,10 @@
+@startuml
+Company-->(Login)
+University-->(Login)
+(Login)-->(Create accounts for students):University
+(Create accounts for students)--(Search for students)
+(Login)-->(Search for students):Company
+(Search for students)..>(Search by name):<<extends>>
+(Search for students)..>(Search by field of interest):<<extends>>
+(Search for students)..>(Search by university):<<extends>>
+@enduml

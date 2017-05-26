@@ -1,0 +1,8 @@
+@startuml
+:Main Admin: as Admin
+left to right direction
+Admin -->(Login)
+Admin -->(Manage account)
+Admin -->(Manage jobs)
+Admin -->(Confirm new accounts)
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+left to right direction
+Company -->(Create account)
+Company -->(Login)
+Company -->(Manage account)
+Company -->(Manage jobs)
+Company -->(View applications)
+@enduml

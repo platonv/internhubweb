@@ -1,0 +1,11 @@
+@startuml
+Student->(Account):Manage
+(Account)..>(Update CV): <<include>>
+(Account)
+University -->(Create account)
+(Create account)-->(Create account for students)
+(Account)--(Create account for students)
+(Create account for students)..>(Generate CV):<<include>>
+(Account)..>(Set field of interest):<<include>>
+(Set field of interest)..>(Update field of interest):<<extends>>
+@enduml

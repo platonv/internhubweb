@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {FormGroup, AbstractControl, FormBuilder, Validators} from '@angular/forms';
+import {FormGroup, AbstractControl, FormBuilder, Validators, FormControl} from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { LoginService, User } from './login.service';
@@ -15,6 +15,7 @@ export class Login {
   public form:FormGroup;
   public email:AbstractControl;
   public password:AbstractControl;
+  public userTypeSelect:string;
   public submitted:boolean = false;
 
   constructor(fb:FormBuilder, private _loginService: LoginService, private _router: Router) {
@@ -34,6 +35,7 @@ export class Login {
   }
 
   public onSubmit(user:User):void {
+    user.userType = this.userTypeSelect;
     this.submitted = true;
     if (this.form.valid) {
       console.log(user);
@@ -42,4 +44,9 @@ export class Login {
         err => console.log(err));
     }
   }
+
+  public setUserType(type) {
+    this.userTypeSelect = type;
+  }
 }
+

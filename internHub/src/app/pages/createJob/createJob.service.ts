@@ -4,6 +4,7 @@ import { Subject } from 'rxjs/Subject';
 
 import { SignInData } from '../../../angular2-token.model';
 import { BaseField } from '../baseForm/baseForm';
+import { CREATE_JOB } from '../baseForm/baseForm';
 
 @Injectable()
 export class CreateJobService {
@@ -16,7 +17,9 @@ export class CreateJobService {
     public formGroup: FormGroup;
     public fields: BaseField[];
 
-    constructor() { }
+    constructor() { 
+        this.fields=CREATE_JOB;
+    }
 
     public initForm(fields: BaseField[]) {
         this.fields = fields;

@@ -1,4 +1,4 @@
-.a2t-form {
+.createJob {
             background-color: white;
             border-radius: 3px;
             box-shadow: 0px 1px 5px 0 rgba(0,0,0,0.3);
@@ -6,7 +6,7 @@
             font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
         }
 
-        .a2t-form button {
+        .createJob button {
             width: 100%;
 
             transition: .3s;
@@ -27,13 +27,13 @@
             border-bottom: 3px solid transparent;
         }
 
-        .a2t-form button:disabled {
+        .createJob button:disabled {
             background-color: #eee !important;
             cursor: not-allowed;
             color: #999;
             text-shadow: none;
         }
 
-        .a2t-form button:hover {
+        .createJob button:hover {
             background-color: #a6d9ae;
         }

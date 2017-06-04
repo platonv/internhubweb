@@ -30,7 +30,7 @@ export class Login {
   
   onLoginSuccess(data){
     console.log("Logged in success", data);
-    this._router.navigate(['/jobs']);
+    this._router.navigate(['/createJob']);
   }
 
   public onSubmit(user:User):void {

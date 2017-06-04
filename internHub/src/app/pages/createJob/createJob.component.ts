@@ -1,7 +1,7 @@
 import { Component }  from '@angular/core';
 
 import { CreateJobService } from './createJob.service';
-import { CreateJobFormFieldComponent } from '../createJobFormField';
+import { CreateJobFormFieldComponent } from './createJobFormField/createJobFormField.component';
 
 @Component({
     providers:[CreateJobService],

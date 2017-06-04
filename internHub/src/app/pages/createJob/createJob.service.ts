@@ -21,8 +21,7 @@ export class CreateJobService {
         this.fields=CREATE_JOB;
     }
 
-    public initForm(fields: BaseField[]) {
-        this.fields = fields;
+    public initForm() {
         this._createFormGroup();
     }
 

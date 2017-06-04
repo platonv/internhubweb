@@ -13,8 +13,7 @@ import{ CreateJobFormFieldComponent} from './createJobFormField/createJobFormFie
         RouterModule
     ],
     declarations: [
-        CreateJobFormFieldComponent,
-        CreateJobComponent,
+        CreateJobComponent
     ],
     exports: [
         CreateJobComponent,

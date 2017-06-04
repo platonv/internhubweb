@@ -107,10 +107,10 @@ export class Angular2TokenService implements CanActivate {
             apiBase:                    "http://internhubapi.herokuapp.com",
 
             signInPath:                 'auth/sign_in',
-            signInRedirect:             '/login',
+            signInRedirect:             '/jobs',
             signInStoredUrlStorageKey:  null,
 
-            signOutPath:                'auth/sign_out',
+            signOutPath:                'auth/sign_in',
             validateTokenPath:          'auth/validate_token',
             signOutFailedValidate:      false,
 
@@ -204,7 +204,6 @@ export class Angular2TokenService implements CanActivate {
 
     // Sign out request and delete storage
     signOut(): Observable<Response> {
-        let observ = this.delete(this.getUserPath() + this.atOptions.signOutPath);
 
         localStorage.removeItem('accessToken');
         localStorage.removeItem('client');
@@ -216,7 +215,9 @@ export class Angular2TokenService implements CanActivate {
         this.atCurrentUserType = null;
         this.atCurrentUserData = null;
 
-        return observ;
+        this.router.navigate(["/login"]);
+
+        return ;
     }
 
     // Validate token request

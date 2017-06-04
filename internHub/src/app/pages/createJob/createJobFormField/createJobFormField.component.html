@@ -5,7 +5,7 @@
                 [attr.for]="question.key"
                 [style.color]="labelColor"
                 *ngIf="_control.pristine">
-                Name:
+                {{question.label}}
             </label>
 
             <label class="a2t-error"
@@ -32,17 +32,6 @@
                 {{question.label}}
             </label>
 
-            <input
-                [formControlName]="question.key"
-                [id]="question.key"
-                [type]="question.type">
-
-            <label
-                [attr.for]="question.key"
-                [style.color]="labelColor"
-                *ngIf="_control.pristine">
-                Description:
-            </label>
             <input
                 [formControlName]="question.key"
                 [id]="question.key"

@@ -114,3 +114,23 @@ export const UPDATE_PASSWORD_FORM: BaseField[] = [
         ]
     })
 ];
+export const CREATE_JOB: BaseField[] = [
+    new BaseField({
+        key: 'name',
+        label: 'Name',
+        type: 'text',
+        validators: [
+            Validators.required,
+            Validators.minLength(3)
+        ]
+    }),
+    new BaseField({
+        key: 'description',
+        label: 'Description',
+        type: 'text',
+        validators: [
+            Validators.required,
+            Validators.minLength(8)
+        ]
+    }),
+];

@@ -1,29 +1,39 @@
-import { Component }  from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { Angular2TokenService } from '../../services/token-service/auth-token.service';
 
-import { CreateJobService } from './createJob.service';
-import { CreateJobFormFieldComponent } from './createJobFormField/createJobFormField.component';
+import { CreateJobFormService } from './createJobForm/createJobForm.service';
+import { CREATE_JOB } from './baseForm/baseForm';
 
 @Component({
-    providers:[CreateJobService],
-    selector: 'createJob',
-    template:`<form class="createJob"
-            (ngSubmit)="_formService.submit()"
-            [formGroup]="_formService.formGroup">
-
-            <createJobFormField
-                *ngFor="let field of this._formService.fields"
-                [question]="field"
-                [form]="_formService.formGroup">
-            </createJobFormField>
-
-            <button type="submit" [disabled]="!_formService.formGroup.valid || _formService.formGroup.pristine || _formService.submitLock">
-                <ng-content *ngIf="!_formService.submitLock"></ng-content>
-                <span *ngIf="_formService.submitLock">Submitting ...</span>
-            </button>
-        </form>`,
-    styleUrls: ['./createJob.component.css']
+    selector:   'createJob',
+    providers:  [CreateJobFormService],
+    template: `
+        <createJobHeadline>Create Job</createJobHeadline>
+        <createJobError [errors]="_errors"></createJobError>
+        <createJobForm>Create Job:</createJobForm>
+    `
 })
-
 export class CreateJobComponent {
-    constructor(public _formService: CreateJobService) { }
+
+    _errors: string[];
+
+    constructor(
+        public _formService: CreateJobFormService,
+        public _sessionService: Angular2TokenService,
+        public _router: Router
+    ) {
+        this._formService.initForm(CREATE_JOB);
+    }
+
+    private _handleSuccess(data: any) {
+        this._errors = null;
+        this._formService.unlockSubmit();
+        this._router.navigate(['restricted']);
+    }
+
+    private _handleError(error: any) {
+        this._errors = error.json().errors;
+        this._formService.unlockSubmit();
+    }
 }

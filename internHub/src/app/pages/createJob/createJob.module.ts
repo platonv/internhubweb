@@ -1,22 +1,23 @@
-import { NgModule }     from '@angular/core';
-import { ReactiveFormsModule }  from '@angular/forms';
+import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { Angular2TokenService } from '../../services/token-service/auth-token.service';
+import {
+    CreateJobSharedModule
+} from './createJobForm/createJobForm.module';
 
-import { CreateJobComponent } from './createJob.component';
-import{ CreateJobFormFieldComponent} from './createJobFormField/createJobFormField.component'
+import{ CreateJobComponent } from './createJob.component'
+import {routing} from './createJob.routing'
 
 @NgModule({
     imports: [
         CommonModule,
-        ReactiveFormsModule,
-        RouterModule
+        RouterModule,
+        CreateJobSharedModule,
+        routing
     ],
     declarations: [
         CreateJobComponent
-    ],
-    exports: [
-        CreateJobComponent,
     ]
 })
-export class CreateJobSharedModule { }
+export class CreateJobModule { }

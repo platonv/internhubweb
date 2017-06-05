@@ -2,12 +2,11 @@ import { Injectable, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Subject } from 'rxjs/Subject';
 
-import { SignInData } from '../../../angular2-token.model';
 import { BaseField } from '../baseForm/baseForm';
 import { CREATE_JOB } from '../baseForm/baseForm';
 
 @Injectable()
-export class CreateJobService {
+export class CreateJobFormService {
 
     // Submit Event
     public submit$ = new EventEmitter<any>();
@@ -18,10 +17,10 @@ export class CreateJobService {
     public fields: BaseField[];
 
     constructor() { 
-        this.fields=CREATE_JOB;
     }
 
-    public initForm() {
+    public initForm(fields:BaseField[]) {
+        this.fields=fields;
         this._createFormGroup();
     }
 

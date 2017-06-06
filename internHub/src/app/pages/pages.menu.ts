@@ -25,7 +25,9 @@ export const PAGES_MENU = [
             order: 0,
           }
         }
-      }
-    ]
+          }
+        }
+      },
+    ],
   }
 ];

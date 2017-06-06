@@ -41,6 +41,7 @@
         </div>
       </div>
     </form>
+<<<<<<< HEAD
 	<div class="form-group row">
 	<label >Select type of user</label>
 	<select [(ngModel)] = "userTypeSelect" class="form-control" >
@@ -50,6 +51,14 @@
 	  <option (click) = "userTypeSelect='university'">university</option>
 	</select>
 	</div>
+=======
+
+    <div class="auth-sep"><span><span translate>{{'login.sign_from_app_text'}}</span></span></div>
+
+    <!--<div class="al-share-auth">
+      TODO Linkedin login
+    </div>-->
+>>>>>>> origin/ViewApplications
   </div>
 </div>
 

@@ -22,8 +22,8 @@ export const routes: Routes = [
     children: [
       { path: '', redirectTo: '/jobs', pathMatch: 'full' },
       { path: 'jobs', loadChildren: 'app/pages/jobs/jobs.module#JobsModule', canActivate: [Angular2TokenService] },
-      { path: 'createJob', loadChildren: 'app/pages/createJob/createJob.module#CreateJobModule',canActivate: [Angular2TokenService]}
-      { path: 'applications', component: ViewApplicationsComponent,canActivate: [Angular2TokenService] }
+      { path: 'createJob', loadChildren: 'app/pages/createJob/createJob.module#CreateJobModule',canActivate: [Angular2TokenService]},
+      { path: 'applications', component: ViewApplicationsComponent, canActivate: [Angular2TokenService] }
     ]
   }
 ];

@@ -107,10 +107,10 @@ export class Angular2TokenService implements CanActivate {
             apiBase:                    "http://internhubapi.herokuapp.com",
 
             signInPath:                 'auth/sign_in',
-            signInRedirect:             '/jobs',
+            signInRedirect:             '/login',
             signInStoredUrlStorageKey:  null,
 
-            signOutPath:                'auth/sign_in',
+            signOutPath:                'auth/sign_out',
             validateTokenPath:          'auth/validate_token',
             signOutFailedValidate:      false,
 
@@ -210,6 +210,7 @@ export class Angular2TokenService implements CanActivate {
         localStorage.removeItem('expiry');
         localStorage.removeItem('tokenType');
         localStorage.removeItem('uid');
+        localStorage.clear();
 
         this.atCurrentAuthData = null;
         this.atCurrentUserType = null;

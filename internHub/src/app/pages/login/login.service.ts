@@ -13,7 +13,6 @@ export class LoginService {
    }
 
   authenticateUser(user: User) {
-    console.log(user);
     return this._tokenService.signIn(user);
   }
 }

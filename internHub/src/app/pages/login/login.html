@@ -1,15 +1,3 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 <div class="auth-main">
   <div class="auth-block">
     <h1 translate>{{'login.title'}}</h1>
@@ -34,22 +22,20 @@
 
       <div class="form-group row">
         <div class="offset-sm-2 col-sm-10">
-          <button [disabled]="!form.valid" type="submit" class="btn btn-default btn-auth" translate routerLink="/jobs">{{'login.sign_in'}}</button>
-          <a routerLink="/jobs" class="btn btn-default btn-auth" translate>{{'login.sign_in'}}</a>
-
-          <!--<a routerLink="/jobs" class="forgot-pass" translate>{{'login.forgot_password'}}</a>  //TO DO -->
+          <button [disabled]="!form.valid" type="submit" class="btn btn-default btn-auth" translate>{{'login.sign_in'}}</button>
         </div>
       </div>
     </form>
-	<div class="form-group row">
-	<label >Select type of user</label>
-	<select [(ngModel)] = "userTypeSelect" class="form-control" >
-	  <option (click) = "userTypeSelect='admin'">admin</option>
-	  <option (click) = "userTypeSelect='company'">company</option>
-	  <option (click) = "userTypeSelect='student'">student</option>          
-	  <option (click) = "userTypeSelect='university'">university</option>
-	</select>
-	</div>
+
+    <div class="form-group row">
+      <label>Select type of user</label>
+      <select [(ngModel)]="userTypeSelect" class="form-control">
+        <option (click) = "userTypeSelect='admin'">admin</option>
+        <option (click) = "userTypeSelect='company'">company</option>
+        <option (click) = "userTypeSelect='student'">student</option>          
+        <option (click) = "userTypeSelect='university'">university</option>
+      </select>
+    </div>
+    
   </div>
 </div>
-

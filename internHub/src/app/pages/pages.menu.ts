@@ -25,9 +25,19 @@ export const PAGES_MENU = [
             order: 0,
           }
         }
+      },
+      {
+        path: 'applications',
+        data: {
+          menu: {
+            title: 'Applications',
+            icon: 'fa fa fa-briefcase',
+            selected: false,
+            expanded: false,
+            order: 0,
           }
         }
-      },
+      }
     ],
   }
 ];

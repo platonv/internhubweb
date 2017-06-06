@@ -1,10 +1,10 @@
-import {Injectable} from '@angular/core';
-import {BaThemeConfigProvider, colorHelper} from '../../../theme';
+import { Injectable } from '@angular/core';
+import { BaThemeConfigProvider, colorHelper } from '../../../theme';
 
 @Injectable()
 export class PieChartService {
 
-  constructor(private _baConfig:BaThemeConfigProvider) {
+  constructor(private _baConfig: BaThemeConfigProvider) {
   }
 
   getData() {
@@ -12,23 +12,26 @@ export class PieChartService {
     return [
       {
         color: pieColor,
-        description: 'dashboard.new_visits',
-        stats: '57,820',
+        description: 'Visits',
+        stats: '73',
         icon: 'person',
-      }, {
+      }, 
+      {
         color: pieColor,
-        description: 'dashboard.purchases',
-        stats: '$ 89,745',
-        icon: 'money',
-      }, {
-        color: pieColor,
-        description: 'dashboard.active_users',
-        stats: '178,391',
+        description: 'Students',
+        stats: '158',
         icon: 'face',
-      }, {
+      }, 
+      {
         color: pieColor,
-        description: 'dashboard.returned',
-        stats: '32,592',
+        description: 'Companies',
+        stats: '87',
+        icon: 'refresh',
+      },
+      {
+        color: pieColor,
+        description: 'Jobs',
+        stats: '297',
         icon: 'refresh',
       }
     ];

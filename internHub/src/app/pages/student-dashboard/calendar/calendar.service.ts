@@ -23,18 +23,18 @@ export class CalendarService {
       eventLimit: true,
       events: [
         {
-          title: 'All Day Event',
+          title: 'Workshop Java',
           start: '2016-03-01',
           color: dashboardColors.silverTree
         },
         {
-          title: 'Long Event',
+          title: 'IT Camp',
           start: '2016-03-07',
           end: '2016-03-10',
-          color: dashboardColors.blueStone
+          color: "orange"
         },
         {
-          title: 'Dinner',
+          title: 'Interview',
           start: '2016-03-14T20:00:00',
           color: dashboardColors.surfieGreen
         },

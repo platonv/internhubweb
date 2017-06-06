@@ -52,6 +52,15 @@
       </div>
     </form>
 
+    <div class="form-group row">
+        <label >Select type of user</label>
+        <select [(ngModel)] = "userTypeSelect" class="form-control" >
+          <option (click) = "userTypeSelect='company'">company</option>
+          <option (click) = "userTypeSelect='student'">student</option>          
+          <option (click) = "userTypeSelect='university'">university</option>
+        </select>
+      </div>
+
     <!--<div class="auth-sep"><span><span>or Sign up with one click</span></span></div>-->
 
     <!--<div class="al-share-auth">

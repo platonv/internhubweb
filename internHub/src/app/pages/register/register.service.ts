@@ -14,7 +14,6 @@ export class RegisterService{
     }
 
     registerCompany(user: User){
-        user.userType = "company";
         return this._tokenService.registerAccount(user);
     }
 }

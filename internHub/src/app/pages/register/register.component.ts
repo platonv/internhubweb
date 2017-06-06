@@ -19,6 +19,7 @@ export class Register {
   public password:AbstractControl;
   public repeatPassword:AbstractControl;
   public passwords:FormGroup;
+  public userType:string
 
   public submitted:boolean = false;
 
@@ -42,11 +43,12 @@ export class Register {
 
   onRegisterSuccess(data){
     console.log("Register success", data);
-    this._router.navigate(['/jobs']);
+    this._router.navigate(['/login']);
   }
 
   public onSubmit(user:User):void {
     this.submitted = true;
+    user.userType = this.userType;
     console.log(user)
     user.password = user.passwords.password;
     if (this.form.valid) {
@@ -55,5 +57,9 @@ export class Register {
         err=>console.log(err)
         );
     }
+  }
+
+  public setUserType(type){
+    this.userType = type;
   }
 }

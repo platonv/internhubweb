@@ -6,21 +6,23 @@ import { CreateJobFormFieldComponent } from './createJobFormField/createJobFormF
 @Component({
     providers:[CreateJobFormService],
     selector: 'createJobForm',
-    template:`<form class="createJobForm"
+    template:`
+    <form class="createJobForm"
             (ngSubmit)="_formService.submit()"
             [formGroup]="_formService.formGroup">
 
-            <createJobFormField
-                *ngFor="let field of this._formService.fields"
-                [question]="field"
-                [form]="_formService.formGroup">
-            </createJobFormField>
+        <createJobFormField
+            *ngFor="let field of this._formService.fields"
+            [question]="field"
+            [form]="_formService.formGroup">
+        </createJobFormField>
 
-            <button type="submit" [disabled]="!_formService.formGroup.valid || _formService.formGroup.pristine || _formService.submitLock">
-                <ng-content *ngIf="!_formService.submitLock"></ng-content>
-                <span *ngIf="_formService.submitLock">Submitting ...</span>
-            </button>
-        </form>`,
+        <button type="submit" [disabled]="!_formService.formGroup.valid || _formService.formGroup.pristine || _formService.submitLock">
+            <ng-content *ngIf="!_formService.submitLock"></ng-content>
+            <span *ngIf="_formService.submitLock">Submitting ...</span>
+        </button>
+    </form>
+    `,
     styleUrls: ['./createJobForm.component.css']
 })
 

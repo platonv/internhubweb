@@ -2,8 +2,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Subject } from 'rxjs/Subject';
 
-import { BaseField } from '../baseForm/baseForm';
-import { CREATE_JOB } from '../baseForm/baseForm';
+import { BaseField,CREATE_JOB } from '../baseForm/baseForm';
 
 @Injectable()
 export class CreateJobFormService {

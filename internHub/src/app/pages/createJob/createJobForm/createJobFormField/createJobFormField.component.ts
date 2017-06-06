@@ -15,19 +15,19 @@ import { BaseField } from '../../baseForm/baseForm';
                 {{question.label}}
             </label>
 
-            <label class="a2t-error"
+            <label class="createJobError"
                 [attr.for]="question.key"
                 *ngIf="_control.hasError('required') && !_control.pristine">
                 {{question.label}} is required
             </label>
 
-            <label class="a2t-error"
+            <label class="createJobError"
                 [attr.for]="question.key"
                 *ngIf="_control.hasError('minlength')">
                 {{question.label}} is too short
             </label>
 
-            <label class="a2t-error"
+            <label class="createJobError"
                 [attr.for]="question.key"
                 *ngIf="_control.hasError('maxlength')">
                 {{question.label}} is too long

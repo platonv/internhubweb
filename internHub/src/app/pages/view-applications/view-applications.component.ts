@@ -1,8 +1,9 @@
-import {Component, Injectable} from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 
 import { SmartTablesService } from '.\internHub\src\app\services\view-applications\view-applications.service.ts';
 import { LocalDataSource } from 'ng2-smart-table';
-import {ViewApplicationsService} from "./view-applications.service";
+import { ViewApplicationsService } from "./view-applications.service";
+import { Apps, Data } from "./view-applications.service";
 
 @Component({
   selector: 'app-view-applications',
@@ -10,49 +11,26 @@ import {ViewApplicationsService} from "./view-applications.service";
   styleUrls: ['./view-applications.component.scss']
 })
 
-export class ViewApplicationsComponent{
-
-  query: string = '';
+export class ViewApplicationsComponent {
+  smartTableData: Apps[] = [];
 
   settings = {
-    add: {
-      addButtonContent: '<i class="ion-ios-plus-outline"></i>',
-      createButtonContent: '<i class="ion-checkmark"></i>',
-      cancelButtonContent: '<i class="ion-close"></i>',
-    },
-    edit: {
-      editButtonContent: '<i class="ion-edit"></i>',
-      saveButtonContent: '<i class="ion-checkmark"></i>',
-      cancelButtonContent: '<i class="ion-close"></i>',
-    },
-    delete: {
-      deleteButtonContent: '<i class="ion-trash-a"></i>',
-      confirmDelete: true
-    },
     columns: {
       id: {
         title: 'ID',
         type: 'number'
       },
-      firstName: {
-        title: 'First Name',
+      description: {
+        title: 'Description',
         type: 'string'
       },
-      lastName: {
-        title: 'Last Name',
-        type: 'string'
-      },
-      username: {
-        title: 'Username',
+      name: {
+        title: 'Job Name',
         type: 'string'
       },
       email: {
         title: 'E-mail',
         type: 'string'
-      },
-      age: {
-        title: 'Age',
-        type: 'number'
       }
     }
   };
@@ -60,16 +38,17 @@ export class ViewApplicationsComponent{
   source: LocalDataSource = new LocalDataSource();
 
   constructor(protected service: ViewApplicationsService) {
-    this.service.getData().then((data) => {
-      this.source.load(data);
-    });
+    this.service.getApplications().
+      subscribe(
+      data => this.onGet(data),
+      err => console.log(err)
+      );
   }
 
-  onDeleteConfirm(event): void {
-    if (window.confirm('Are you sure you want to delete?')) {
-      event.confirm.resolve();
-    } else {
-      event.confirm.reject();
-    }
+  onGet(data: Data[]){
+    this.smartTableData = data.map(data => new Apps(data.id, data.job.description, data.job.name, data.student.email));
+    console.log("onGet: ", this.smartTableData);
+    this.source.load(this.smartTableData);
   }
+
 }

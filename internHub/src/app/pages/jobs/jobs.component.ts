@@ -14,23 +14,35 @@ import'jquery';
 })
 export class JobsComponent implements OnInit {
   public jobs:Job [];
-/*
-  constructor(public _tokenService: Angular2TokenService, private _http: Http) {
-    this._tokenService.init();
-    this._tokenService.get( "jobs").subscribe(
-      data => this.jobs = data.json(),
-      err => console.log(err));
-   }
-   */
+  
   constructor(private jobsService:JobsService){
 
   }
   
-   getJobs():void{
-     this.jobsService.getJobs().then(jobs=>this.jobs=jobs);
+  getJobs():void{
+     this.jobsService.getJobs()
+              .subscribe( 
+                data => this.onGetJobsSuccess(data),
+                err => console.log(err)
+              );
    }
+
+  applyForJob(job_id) :void {
+    this.jobsService.applyForJob(job_id)
+              .subscribe( 
+                data => console.log(data),
+                err => console.log(err)
+              );
+  }
   ngOnInit() {
     this.getJobs();
   }
 
+  onGetJobsSuccess(data) {
+    console.log("onGetJobsSuccess: ", data);
+    this.jobs = data;
+  }
+
 }
+
+

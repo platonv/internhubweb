@@ -13,8 +13,6 @@ export class LoginService {
    }
 
   authenticateUser(user: User) {
-    user.userType = "company";
-    console.log(user);
     return this._tokenService.signIn(user);
   }
 
@@ -22,3 +20,4 @@ export class LoginService {
     return this._tokenService.signOut();
   }
 }
+

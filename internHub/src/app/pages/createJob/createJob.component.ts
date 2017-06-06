@@ -23,7 +23,7 @@ export class CreateJob {
 
   constructor(fb: FormBuilder, private _createJobService: CreateJobService, private _router: Router) {
     this.form = fb.group({
-      'name': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
+      'name': ['', Validators.compose([Validators.required, Validators.minLength(4), Validators.maxLength(30)])],
       'description': ['', Validators.compose([Validators.required, Validators.minLength(4)])]
       // 'startingDate': ['', Validators.compose([Validators.required, Validators.minLength(8)])],
       // 'endingDate': ['', Validators.compose([Validators.required, Validators.minLength(8)])],

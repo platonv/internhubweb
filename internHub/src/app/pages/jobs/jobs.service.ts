@@ -1,12 +1,10 @@
 import { Injectable } from '@angular/core';
-import { JOBS } from '../mock-jobs/mock-jobs';
-import { Http, Response, RequestOptions, Headers } from '@angular/http';
+import { Response } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
-import { AuthData } from '../../services/token-service/auth-data.model';
 import { Angular2TokenService } from '../../services/token-service/auth-token.service';
 
 
@@ -14,19 +12,18 @@ export class Job {
   constructor(public id: number, public name: string, public description: string, public created_at: string, public updated_at: string, public company_id: string) { }
 }
 export class JobWrite {
-  constructor(public name: string, public description: string){}
+  constructor(public name: string, public description: string) { }
 }
 
 @Injectable()
 export class JobsService {
-  apiUrl: string = "https://internhubapi.herokuapp.com/";
 
-  constructor(private tokenService: Angular2TokenService) { 
+  constructor(private tokenService: Angular2TokenService) {
     this.tokenService.init();
   }
 
   getJobs(): Observable<Job[]> {
-      return this.tokenService.get("jobs")
+    return this.tokenService.get("jobs")
       .map(this.extractData)
       .catch(this.handleError);
   }

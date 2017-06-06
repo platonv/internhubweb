@@ -19,7 +19,7 @@ export class Register {
   public password:AbstractControl;
   public repeatPassword:AbstractControl;
   public passwords:FormGroup;
-  public userType:string
+  public userTypeSelect:string
 
   public submitted:boolean = false;
 
@@ -48,7 +48,7 @@ export class Register {
 
   public onSubmit(user:User):void {
     this.submitted = true;
-    user.userType = this.userType;
+    user.userType = this.userTypeSelect;
     console.log(user)
     user.password = user.passwords.password;
     if (this.form.valid) {
@@ -60,6 +60,6 @@ export class Register {
   }
 
   public setUserType(type){
-    this.userType = type;
+    this.userTypeSelect = type;
   }
 }

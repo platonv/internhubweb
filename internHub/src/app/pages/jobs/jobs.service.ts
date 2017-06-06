@@ -13,6 +13,9 @@ import { Angular2TokenService } from '../../services/token-service/auth-token.se
 export class Job {
   constructor(public id: number, public name: string, public description: string, public created_at: string, public updated_at: string, public company_id: string) { }
 }
+export class JobWrite {
+  constructor(public name: string, public description: string){}
+}
 
 @Injectable()
 export class JobsService {

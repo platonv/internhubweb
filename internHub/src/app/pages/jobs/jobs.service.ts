@@ -29,7 +29,8 @@ export class JobsService {
   }
 
   applyForJob(job_id): Observable<Response> {
-    let body = "{\"job_id\":\"" + job_id + "\"" + "}";
+    let myjobid = {"job_id": job_id};
+    let body = JSON.stringify(myjobid);
     return this.tokenService.post("applications", body)
       .map(this.extractData)
       .catch(this.handleError);

@@ -1,37 +1,21 @@
 import { Injectable } from '@angular/core';
-import { Response } from '@angular/http';
-
+import { Angular2TokenService } from '../../services/token-service/auth-token.service';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
+import { Response } from '@angular/http';
 
-import { Angular2TokenService } from '../../services/token-service/auth-token.service';
-
-
-export class Job {
-  constructor(public id: number, public name: string, public description: string, public created_at: string, public updated_at: string, public company_id: string) { }
-}
-export class JobWrite {
-  constructor(public name: string, public description: string) { }
-}
+import { JobWrite } from '../jobs/jobs.service';
 
 @Injectable()
-export class JobsService {
-
-  constructor(private tokenService: Angular2TokenService) {
-    this.tokenService.init();
+export class CreateJobService {
+  constructor(public _tokenService: Angular2TokenService) {
+    this._tokenService.init();
   }
 
-  getJobs(): Observable<Job[]> {
-    return this.tokenService.get("jobs")
-      .map(this.extractData)
-      .catch(this.handleError);
-  }
-
-  applyForJob(job_id): Observable<Response> {
-    let myjobid = {"job_id": job_id};
-    let body = JSON.stringify(myjobid);
-    return this.tokenService.post("applications", body)
+  createJob(job: JobWrite): Observable<Response> {
+    let body = JSON.stringify(job);
+    return this._tokenService.post("jobs", body)
       .map(this.extractData)
       .catch(this.handleError);
   }
@@ -41,6 +25,7 @@ export class JobsService {
     // console.log("extactData: ", );
     return body || {};
   }
+
   private handleError(error: Response | any) {
     // In a real world app, you might use a remote logging infrastructure
     let errMsg: string;

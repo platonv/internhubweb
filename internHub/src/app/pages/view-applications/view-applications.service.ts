@@ -7,31 +7,30 @@ import 'rxjs/add/operator/map';
 
 import { Angular2TokenService } from '../../services/token-service/auth-token.service';
 
-
 export class Job {
   constructor(public id: number, public name: string, public description: string, public created_at: string, public updated_at: string, public company_id: string) { }
 }
-export class JobWrite {
-  constructor(public name: string, public description: string) { }
+
+export class Student {
+  constructor(public id: number, public provider: string, public uid: string, public name: string, public nickname: string, public image: string, public email: string, public created_at: string, public updated_at: string, public first_name: string, public last_name: string, public birthday: string, public start_year: string) { }
+}
+
+export class Data {
+  constructor(public id: number, public student: Student, public job: Job) { }
+}
+
+export class Apps {
+  constructor(public id: number, public description: string, public name: string, public email: string) { }
 }
 
 @Injectable()
-export class JobsService {
-
+export class ViewApplicationsService {
   constructor(private tokenService: Angular2TokenService) {
     this.tokenService.init();
   }
 
-  getJobs(): Observable<Job[]> {
-    return this.tokenService.get("jobs")
-      .map(this.extractData)
-      .catch(this.handleError);
-  }
-
-  applyForJob(job_id): Observable<Response> {
-    let myjobid = {"job_id": job_id};
-    let body = JSON.stringify(myjobid);
-    return this.tokenService.post("applications", body)
+  getApplications(): Observable<Data[]> {
+    return this.tokenService.get("applications")
       .map(this.extractData)
       .catch(this.handleError);
   }
@@ -55,3 +54,5 @@ export class JobsService {
     return Observable.throw(errMsg);
   }
 }
+
+

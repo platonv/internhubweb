@@ -1,39 +1,56 @@
-import { Component, Input } from '@angular/core';
+import {Component} from '@angular/core';
+import {FormGroup, AbstractControl, FormBuilder, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
-import { Angular2TokenService } from '../../services/token-service/auth-token.service';
 
-import { CreateJobFormService } from './createJobForm/createJobForm.service';
-import { CREATE_JOB } from './baseForm/baseForm';
+import { CreateJobService, Job} from './createJob.service';
+
+import 'style-loader!./createJob.scss';
 
 @Component({
-    selector:   'createJob',
-    providers:  [CreateJobFormService],
-    template: `
-        <createJobHeadline>Create Job</createJobHeadline>
-        <createJobError [errors]="_errors"></createJobError>
-        <createJobForm>Create Job:</createJobForm>
-    `
+  selector: 'createJob',
+  templateUrl: './createJob.html',
 })
-export class CreateJobComponent {
+export class CreateJob {
 
-    _errors: string[];
+  public form:FormGroup;
+  public name:AbstractControl;
+  public description:AbstractControl;
+  public startingDate:AbstractControl;
+  public languages:AbstractControl;
+  public endingDate:AbstractControl;
+  public submitted:boolean = false;
 
-    constructor(
-        public _formService: CreateJobFormService,
-        public _sessionService: Angular2TokenService,
-        public _router: Router
-    ) {
-        this._formService.initForm(CREATE_JOB);
-    }
+  constructor(fb:FormBuilder, private _createJobService: CreateJobService, private _router: Router) {
+    this.form = fb.group({
+      'name': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
+      'description': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
+      'startingDate': ['', Validators.compose([Validators.required, Validators.minLength(8)])],
+      'endingDate': ['', Validators.compose([Validators.required, Validators.minLength(8)])],
+      'languages': ['', Validators.compose([Validators.required, Validators.minLength(2)])]
+    });
 
-    private _handleSuccess(data: any) {
-        this._errors = null;
-        this._formService.unlockSubmit();
-        this._router.navigate(['restricted']);
-    }
+    this.name = this.form.controls['name'];
+    this.description = this.form.controls['description'];
+    this.startingDate=this.form.controls['startingDate'];
+    this.languages=this.form.controls['languages'];     
+    this.endingDate=this.form.controls['endingDate'];
+  }
 
-    private _handleError(error: any) {
-        this._errors = error.json().errors;
-        this._formService.unlockSubmit();
-    }
+  
+  onLoginSuccess(data){
+    console.log("Logged in success", data);
+    this._router.navigate(['/jobs']);
+  }
+
+  public onSubmit(job:Job):void {
+    this.submitted = true;
+    if (this.form.valid) {
+      console.log(job);
+      this._createJobService.saveJob(job);
+      /*.subscribe( 
+        data => this.onLoginSuccess(data),
+        err => console.log(err));
+    */
+  }
+  }
 }

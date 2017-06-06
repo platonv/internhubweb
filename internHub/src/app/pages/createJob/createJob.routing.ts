@@ -1,11 +1,14 @@
 import { Routes, RouterModule }  from '@angular/router';
-import { CreateJobComponent } from './createJob.component';
 
-const routes: Routes = [
+import { CreateJob } from './createJob.component';
+import { ModuleWithProviders } from '@angular/core';
+
+// noinspection TypeScriptValidateTypes
+export const routes: Routes = [
   {
     path: '',
-    component: CreateJobComponent
+    component: CreateJob
   }
 ];
 
-export const routing = RouterModule.forChild(routes);
+export const routing: ModuleWithProviders = RouterModule.forChild(routes);

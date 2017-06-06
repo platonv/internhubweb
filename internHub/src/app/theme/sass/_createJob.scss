@@ -8,7 +8,7 @@ $text-color: #ffffff;
   align-items: center;
   top:200px;
   left:200px;
-  bottom:50px;
+  bottom:25px;
   width:800px;
   position: absolute;
 }
@@ -28,14 +28,6 @@ $text-color: #ffffff;
   p {
     font-size: 16px;
   }
-  a {
-    text-decoration: none;
-    outline: none;
-    transition: all 0.2s ease;
-    color: $primary;
-    &:hover {
-      color: $primary-dark;
-    }
   }
 
   .control-label {
@@ -46,31 +38,16 @@ $text-color: #ffffff;
   .form-group {
     margin-bottom: 12px;
   }
-}
 
 .form-control#inputDescription{
   width:500px;
   height: 100px;
 }
-.auth-input {
-  width: 300px;
-  margin-bottom: 24px;
-  input {
-    display: block;
-    width: 40px;
-    height: 100px;
-    border: none;
-    font-size: 16px;
-    padding: 4px 10px;
-    outline: none;
-  }
+#submit{
+  left:115px;
+  bottom:1px;
 }
 
-.btn btn-default btn-auth#submitButton{
-  left:500px;
-}
-.btn-auth {
-  color: #ffffff!important;
-}
+
 
 

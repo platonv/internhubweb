@@ -2,8 +2,8 @@ import {Injectable} from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Angular2TokenService } from '../../services/token-service/auth-token.service';
 
-export class User {
-  constructor(public email: string, public password: string, public userType: string) { }
+export class Job {
+  constructor(public name: string, public startingDate: Date, public endingDate: Date,public languages:string,public description,string) { }
 }
 
 @Injectable()
@@ -12,9 +12,7 @@ export class CreateJobService {
     this._tokenService.init();
    }
 
-  authenticateUser(user: User) {
-    user.userType = "company";
-    console.log(user);
-    return this._tokenService.signIn(user);
+  saveJob(job: Job) {
+ //   return this._tokenService.createJob(job);
   }
 }

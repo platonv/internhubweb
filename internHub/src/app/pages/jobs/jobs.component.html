@@ -21,7 +21,7 @@
         <div class="box-body-content">
           {{job.description}}
         </div>
-        <button class="btn btn-block btn-success">Apply!</button>
+        <button class="btn btn-block btn-success" id="{{job.id}}" (click)="applyForJob(job.id)">Apply!</button>
       </div>
       <!-- /.box-body -->
     </div>
